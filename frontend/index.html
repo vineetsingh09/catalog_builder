@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalog Builder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Catalog Builder</h1>
+        <p>Generate localized product descriptions powered by GPT.</p>
+      </header>
+      <form id="catalog-form">
+        <label>
+          Product name
+          <input type="text" id="product-name" name="productName" required minlength="2" />
+        </label>
+        <label>
+          Keywords (comma separated)
+          <input type="text" id="keywords" name="keywords" placeholder="eco-friendly, wireless" />
+        </label>
+        <label>
+          Country
+          <input type="text" id="country" name="country" required />
+        </label>
+        <label>
+          Language
+          <input type="text" id="language" name="language" required />
+        </label>
+        <button type="submit" id="submit">Generate</button>
+      </form>
+      <section id="loading" class="hidden">Generating content…</section>
+      <section id="result" class="hidden">
+        <h2 id="result-name"></h2>
+        <article id="result-description"></article>
+        <ul id="result-bullets"></ul>
+        <p id="result-blurb" class="blurb"></p>
+        <div id="result-images" class="image-grid"></div>
+        <div id="result-sources" class="sources"></div>
+      </section>
+      <section id="error" class="hidden"></section>
+    </main>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
